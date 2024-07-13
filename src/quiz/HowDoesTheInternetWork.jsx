@@ -32,12 +32,11 @@ export default function HowDoesTheInternetWork() {
 
   const handleAnswerChange = (index) => (e) => {
     const value = e.target.value;
-    let newArr = [...answers]; // copying the old datas array
-    // a deep copy is not needed as we are overriding the whole object below, and not setting a property of it. this does not mutate the state.
+    let newArr = [...answers];
     if (e.target.checked) {
-      newArr[index] = value; // replace e.target.value with whatever you want to change it to
+      newArr[index] = value;
     } else {
-      newArr[index] = ""; // replace e.target.value with whatever you want to change it to
+      newArr[index] = "";
     }
     setAnswers(newArr);
   };
@@ -86,9 +85,7 @@ export default function HowDoesTheInternetWork() {
           </form>
         </div>
       ))}
-      <button onClick={handleSubmit}>
-        Submit
-      </button>
+      <button onClick={handleSubmit}>Submit</button>
     </>
   );
 }
