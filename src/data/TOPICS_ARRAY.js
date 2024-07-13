@@ -1,0 +1,1 @@
+export const TOPICS_ARRAY = ["How does the internet work?", "What is HTTP?"];
