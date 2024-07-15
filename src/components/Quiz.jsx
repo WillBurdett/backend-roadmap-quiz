@@ -43,16 +43,16 @@ export default function Quiz({QUESTIONS}) {
   };
 
   return (
-    <>
+    <div>
       {questions.map((q, i) => (
         <div 
-        // className="group-form offset-3"
+        className="quiz"
         >
           <form>
-            <h2>{q.question}</h2>
+            <h2 className="question-text">{q.question}</h2>
             {q.options.map((o) => (
-              <div>
-                <label>
+              <div className="option">
+                <label className="option-text">
                   <input
                     type="checkbox"
                     checked={answers[i] === o}
@@ -68,6 +68,6 @@ export default function Quiz({QUESTIONS}) {
         </div>
       ))}
       <button className="btn btn-primary me-2" onClick={handleSubmit}>Submit</button>
-    </>
+    </div>
   );
 }

@@ -15,10 +15,10 @@ export default function Topics() {
   };
 
   return (
-    <div>
+    <div className="topics">
       {!selectedTopic ? (
         <div>
-          <h2>Topics</h2>
+          <h2 className="header white">Topics</h2>
           {TOPICS_ARRAY.map((t) => {
             return (
               <Topic topic={t} handleTopicSelection={handleTopicSelection} />

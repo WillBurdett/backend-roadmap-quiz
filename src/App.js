@@ -3,8 +3,8 @@ import Topics from './components/Topics';
 
 function App() {
   return (
-    <div>
-      <h1>Backend Roadmap Quiz!</h1>
+    <div className='app'>
+      <h1 className='header'>Backend Roadmap Quiz!</h1>
       <Topics />
     </div>
   );
