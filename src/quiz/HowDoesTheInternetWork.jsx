@@ -1,28 +1,9 @@
 import { useState } from "react";
+import 'bootstrap/dist/css/bootstrap.css'; 
+import { HOW_DOES_THE_INTERNET_WORK_QUESTIONS } from '../data/questions/HOW_DOES_THE_INTERNET_WORK' 
 
 export default function HowDoesTheInternetWork() {
-  const questions = [
-    {
-      questionNumber: 1,
-      question: "What is the internet?",
-      options: [
-        "A single server all computers connect to and communicate.",
-        "A global network of computers that communicate through a set of protocols.",
-      ],
-      answer:
-        "A global network of computers that communicate through a set of protocols.",
-      minSelection: 1,
-      maxSelection: 1,
-    },
-    {
-      questionNumber: 2,
-      question: "Everything sent over the internet is sent in ____ ?",
-      options: ["Bytes", "Bandwidth", "Bits", "Megapixels"],
-      answer: "Bits",
-      minSelection: 1,
-      maxSelection: 1,
-    },
-  ];
+  const questions = HOW_DOES_THE_INTERNET_WORK_QUESTIONS
 
   const [answers, setAnswers] = useState(
     Array.apply(null, Array(questions.length)).map(function () {
@@ -65,7 +46,9 @@ export default function HowDoesTheInternetWork() {
   return (
     <>
       {questions.map((q, i) => (
-        <div>
+        <div 
+        // className="group-form offset-3"
+        >
           <form>
             <h2>{q.question}</h2>
             {q.options.map((o) => (
@@ -85,7 +68,7 @@ export default function HowDoesTheInternetWork() {
           </form>
         </div>
       ))}
-      <button onClick={handleSubmit}>Submit</button>
+      <button className="btn btn-primary me-2" onClick={handleSubmit}>Submit</button>
     </>
   );
 }

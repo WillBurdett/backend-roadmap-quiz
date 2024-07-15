@@ -18,7 +18,7 @@ export default function Questions({ t, seeAllTopics }) {
 
   return (
     <div>
-      <button onClick={seeAllTopics}>Back to topics</button>
+      <button className="btn btn-primary me-2" onClick={seeAllTopics}>Back to topics</button>
       <h1>{t} - Questions</h1>
       {content}
     </div>
