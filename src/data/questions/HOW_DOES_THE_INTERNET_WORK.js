@@ -1,4 +1,4 @@
-export const HOW_DOES_THE_INTERNET_WORK_QUESTIONS = [
+export const HOW_DOES_THE_INTERNET_WORK = [
   {
     questionNumber: 1,
     question: "What is the internet?",

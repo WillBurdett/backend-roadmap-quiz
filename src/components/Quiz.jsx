@@ -1,9 +1,8 @@
 import { useState } from "react";
-import 'bootstrap/dist/css/bootstrap.css'; 
-import { HOW_DOES_THE_INTERNET_WORK_QUESTIONS } from '../data/questions/HOW_DOES_THE_INTERNET_WORK' 
+import 'bootstrap/dist/css/bootstrap.css';
 
-export default function HowDoesTheInternetWork() {
-  const questions = HOW_DOES_THE_INTERNET_WORK_QUESTIONS
+export default function Quiz({QUESTIONS}) {
+  const questions = QUESTIONS;
 
   const [answers, setAnswers] = useState(
     Array.apply(null, Array(questions.length)).map(function () {
