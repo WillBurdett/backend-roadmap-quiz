@@ -444,4 +444,17 @@ export const WHAT_IS_HTTP = [
         minSelection: 1,
         maxSelection: 1,
     },
+    {
+        questionNumber: 35,
+        question: "What are the correct steps for HTTPS?",
+        options: [
+            "1. TCP handshake, 2. Certificate Check, 3. Key Exchange, 4. Data Transmission.",
+            "1. TCP handshake, 2. Key Exchange, 3. Certificate Check, 4. Data Transmission.",
+            "1. TLS handshake, 2. Certificate Check, 3. Key Exchange, 4. Data Transmission."
+        ],
+        answer:
+            "1. TCP handshake, 2. Certificate Check, 3. Key Exchange, 4. Data Transmission.",
+        minSelection: 1,
+        maxSelection: 1,
+    },
 ];

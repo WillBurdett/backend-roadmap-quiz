@@ -3,7 +3,8 @@ import 'bootstrap/dist/css/bootstrap.css';
 
 export default function Quiz({QUESTIONS}) {
   const questions = QUESTIONS;
-
+  
+  const [totalScore, setTotalScore] = useState('')
   const [answers, setAnswers] = useState(
     Array.apply(null, Array(questions.length)).map(function () {
       return "";
@@ -39,7 +40,7 @@ export default function Quiz({QUESTIONS}) {
         correctAnswers++;
       }
     }
-    console.log("you scored " + correctAnswers + " out of " + questions.length);
+    setTotalScore(correctAnswers)
   };
 
   return (
@@ -68,6 +69,7 @@ export default function Quiz({QUESTIONS}) {
         </div>
       ))}
       <button className="btn btn-primary me-2" onClick={handleSubmit}>Submit</button>
+      {totalScore !== '' && <h2 className="purple">You scored {totalScore} out of {questions.length}!</h2>}
     </div>
   );
 }
