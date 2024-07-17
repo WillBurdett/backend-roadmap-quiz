@@ -1,10 +1,11 @@
 import './App.css';
+import Header from './components/Header';
 import Topics from './components/Topics';
 
 function App() {
   return (
     <div className='app'>
-      <h1 className='header'>Backend Roadmap Quiz!</h1>
+      <Header />
       <Topics />
     </div>
   );

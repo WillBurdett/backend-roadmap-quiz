@@ -1,10 +1,10 @@
 import { useState } from "react";
-import 'bootstrap/dist/css/bootstrap.css';
+import "bootstrap/dist/css/bootstrap.css";
 
-export default function Quiz({QUESTIONS}) {
+export default function Quiz({ QUESTIONS }) {
   const questions = QUESTIONS;
-  
-  const [totalScore, setTotalScore] = useState('')
+
+  const [totalScore, setTotalScore] = useState("");
   const [answers, setAnswers] = useState(
     Array.apply(null, Array(questions.length)).map(function () {
       return "";
@@ -40,15 +40,13 @@ export default function Quiz({QUESTIONS}) {
         correctAnswers++;
       }
     }
-    setTotalScore(correctAnswers)
+    setTotalScore(correctAnswers);
   };
 
   return (
     <div>
       {questions.map((q, i) => (
-        <div 
-        className="quiz"
-        >
+        <div className="quiz">
           <form>
             <h2 className="question-text">{q.question}</h2>
             {q.options.map((o) => (
@@ -68,8 +66,12 @@ export default function Quiz({QUESTIONS}) {
           </form>
         </div>
       ))}
-      <button className="btn btn-primary me-2" onClick={handleSubmit}>Submit</button>
-      {totalScore !== '' && <h2 className="purple">You scored {totalScore} out of {questions.length}!</h2>}
+      <button onClick={handleSubmit}>Submit</button>
+      {totalScore !== "" && (
+        <h2 className="purple">
+          You scored {totalScore} out of {questions.length}!
+        </h2>
+      )}
     </div>
   );
 }

@@ -1,5 +1,6 @@
 import { useState } from "react";
 import Topic from "./Topic";
+import Home from "./Home";
 import Questions from "./Questions";
 import { TOPICS_ARRAY } from "../data/TOPICS_ARRAY";
 
@@ -16,20 +17,15 @@ export default function Topics() {
 
   return (
     <div className="topics">
-      {!selectedTopic ? (
-        <div>
-          <h2 className="header white">Topics</h2>
+        <div className="">
           {TOPICS_ARRAY.map((t) => {
             return (
-              <Topic topic={t} handleTopicSelection={handleTopicSelection} />
+              <Topic topic={t} handleTopicSelection={handleTopicSelection} selectedTopic={selectedTopic} />
             );
           })}
+          {selectedTopic === "" && <Home/>}
+          {selectedTopic && <Questions t={selectedTopic} seeAllTopics={handleSeeAllTopics}/>}
         </div>
-      ) : (
-        <div>
-          <Questions t={selectedTopic} seeAllTopics={handleSeeAllTopics} />
-        </div>
-      )}
     </div>
   );
 }
