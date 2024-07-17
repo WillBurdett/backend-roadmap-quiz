@@ -56,7 +56,6 @@ button {
 
 .quiz {
   margin: 0 auto;
-  margin-top: 1rem;
 }
 
 .quiz h2 {
@@ -79,6 +78,10 @@ button {
   /* border: red 2px solid; */
   height: 100vh;
   margin-top: 1rem;
+}
+
+.quiz-container {
+  margin-top: 2rem;
 }
 
 

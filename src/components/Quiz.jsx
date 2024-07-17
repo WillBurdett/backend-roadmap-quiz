@@ -32,6 +32,13 @@ export default function Quiz({ QUESTIONS }) {
     checkAnswers();
   };
 
+  const handleReset = (event) => {
+    setAnswers(
+      Array.apply(null, Array(questions.length)).map(function () {
+        return "";
+      }))
+  };
+
   const checkAnswers = () => {
     let correctAnswers = 0;
     for (let i = 0; i < questions.length; i++) {
@@ -41,10 +48,11 @@ export default function Quiz({ QUESTIONS }) {
       }
     }
     setTotalScore(correctAnswers);
+    alert('You scored ' + correctAnswers + ' out of ' + questions.length)
   };
 
   return (
-    <div>
+    <div className="quiz-container">
       {questions.map((q, i) => (
         <div className="quiz">
           <form>
@@ -67,11 +75,12 @@ export default function Quiz({ QUESTIONS }) {
         </div>
       ))}
       <button onClick={handleSubmit}>Submit</button>
-      {totalScore !== "" && (
+      <button onClick={handleReset}>Reset</button>
+      {/* {totalScore !== "" && (
         <h2 className="purple">
           You scored {totalScore} out of {questions.length}!
         </h2>
-      )}
+      )} */}
     </div>
   );
 }
