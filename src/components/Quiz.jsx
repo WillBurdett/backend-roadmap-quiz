@@ -1,14 +1,12 @@
 import { useState } from "react";
 import "bootstrap/dist/css/bootstrap.css";
+import createEmptyArrayOfGivenLength from "../data/utils/utils";
 
 export default function Quiz({ QUESTIONS }) {
   const questions = QUESTIONS;
 
   const [totalScore, setTotalScore] = useState("");
-  const [answers, setAnswers] = useState(
-    Array.apply(null, Array(questions.length)).map(function () {
-      return "";
-    })
+  const [answers, setAnswers] = useState(createEmptyArrayOfGivenLength(questions.length)
   );
 
   const handleAnswerChange = (index) => (e) => {
@@ -32,11 +30,8 @@ export default function Quiz({ QUESTIONS }) {
     checkAnswers();
   };
 
-  const handleReset = (event) => {
-    setAnswers(
-      Array.apply(null, Array(questions.length)).map(function () {
-        return "";
-      }))
+  const handleReset = () => {
+    setAnswers(createEmptyArrayOfGivenLength(questions.length))
   };
 
   const checkAnswers = () => {
@@ -48,7 +43,7 @@ export default function Quiz({ QUESTIONS }) {
       }
     }
     setTotalScore(correctAnswers);
-    alert('You scored ' + totalScore + ' out of ' + questions.length)
+    alert('You scored ' + correctAnswers + ' out of ' + questions.length)
   };
 
   return (
