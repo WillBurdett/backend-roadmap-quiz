@@ -48,7 +48,7 @@ export default function Quiz({ QUESTIONS }) {
       }
     }
     setTotalScore(correctAnswers);
-    alert('You scored ' + correctAnswers + ' out of ' + questions.length)
+    alert('You scored ' + totalScore + ' out of ' + questions.length)
   };
 
   return (
