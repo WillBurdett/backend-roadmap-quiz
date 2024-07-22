@@ -5,9 +5,10 @@ import createEmptyArrayOfGivenLength from "../data/utils/utils";
 export default function Quiz({ QUESTIONS }) {
   const questions = QUESTIONS;
 
-  const [totalScore, setTotalScore] = useState("");
-  const [answers, setAnswers] = useState(createEmptyArrayOfGivenLength(questions.length)
+  const [answers, setAnswers] = useState(
+    createEmptyArrayOfGivenLength(questions.length)
   );
+  const [answersSubmitted, setAnswersSubmitted] = useState(false);
 
   const handleAnswerChange = (index) => (e) => {
     const value = e.target.value;
@@ -20,6 +21,12 @@ export default function Quiz({ QUESTIONS }) {
     setAnswers(newArr);
   };
 
+  const flipAnswersSubmitted = () => {
+    setAnswersSubmitted(a => (
+      setAnswersSubmitted(!a)
+    ))
+  }
+
   const handleSubmit = (event) => {
     event.preventDefault();
 
@@ -31,7 +38,8 @@ export default function Quiz({ QUESTIONS }) {
   };
 
   const handleReset = () => {
-    setAnswers(createEmptyArrayOfGivenLength(questions.length))
+    setAnswers(createEmptyArrayOfGivenLength(questions.length));
+    flipAnswersSubmitted();
   };
 
   const checkAnswers = () => {
@@ -42,14 +50,15 @@ export default function Quiz({ QUESTIONS }) {
         correctAnswers++;
       }
     }
-    setTotalScore(correctAnswers);
-    alert('You scored ' + correctAnswers + ' out of ' + questions.length)
+    flipAnswersSubmitted();
+
+    alert("You scored " + correctAnswers + " out of " + questions.length);
   };
 
-  return (
-    <div className="quiz-container">
+  const content = (
+    <>
       {questions.map((q, i) => (
-        <div className="quiz">
+        <div className="quiz" style={{ backgroundColor: answersSubmitted ? `${q.answer === answers[i] ? 'green' : 'purple'}` : '' }}>
           <form>
             <h2 className="question-text">{q.question}</h2>
             {q.options.map((o) => (
@@ -69,13 +78,14 @@ export default function Quiz({ QUESTIONS }) {
           </form>
         </div>
       ))}
+    </>
+  );
+  
+  return (
+    <div className="quiz-container">
+      {content}
       <button onClick={handleSubmit}>Submit</button>
-      <button onClick={handleReset}>Reset</button>
-      {/* {totalScore !== "" && (
-        <h2 className="purple">
-          You scored {totalScore} out of {questions.length}!
-        </h2>
-      )} */}
+      <button onClick={handleReset}>Reset</button>;
     </div>
   );
 }
