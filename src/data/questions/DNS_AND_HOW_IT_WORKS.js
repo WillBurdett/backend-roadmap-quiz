@@ -128,4 +128,105 @@ export const DNS_AND_HOW_IT_WORKS = [
         minSelection: 1,
         maxSelection: 1,
     },
+    {
+        questionNumber: 12,
+        question: "The information stored on the Authoritative Name Server is called the...",
+        options: [
+            "IP address records",
+            "DNS Records or Zone files",
+            "Admin Records or files"
+        ],
+        answer:
+            "DNS Records or Zone files",
+        minSelection: 1,
+        maxSelection: 1,
+    },
+    {
+        questionNumber: 13,
+        question: "I indicate the IP address of the domain. I also store TTL (time-to-live) for caching and store names using the '@' symbol for the root addresses (i.e. no 'www' or subdomain e.g. 'roadmap.sh'). Who am I?",
+        options: [
+            "'A' record (Address record)",
+            "CNAME Record (Canonical name record)",
+            "MX Record (Mail Exchanger record)",
+            "TXT Record (Text record)",
+            "NS Record (Name server record)",
+        ],
+        answer:
+            "'A' record (Address record)",
+        minSelection: 1,
+        maxSelection: 1,
+    },
+    {
+        questionNumber: 14,
+        question: "I store aliases which point a domain/subdomain to another domain. Who am I?",
+        options: [
+            "'A' record (Address record)",
+            "CNAME Record (Canonical name record)",
+            "MX Record (Mail Exchanger record)",
+            "TXT Record (Text record)",
+            "NS Record (Name server record)",
+        ],
+        answer:
+            "CNAME Record (Canonical name record)",
+        minSelection: 1,
+        maxSelection: 1,
+    },
+    {
+        questionNumber: 15,
+        question: "I help route emails to the relevant server. Who am I?",
+        options: [
+            "'A' record (Address record)",
+            "CNAME Record (Canonical name record)",
+            "MX Record (Mail Exchanger record)",
+            "TXT Record (Text record)",
+            "NS Record (Name server record)",
+        ],
+        answer:
+            "MX Record (Mail Exchanger record)",
+        minSelection: 1,
+        maxSelection: 1,
+    },
+    {
+        questionNumber: 16,
+        question: "I'm mainly used by third parties that want to verify the ownership of a domain name. I allow you to add arbitrary text to a domain name. Who am I?",
+        options: [
+            "'A' record (Address record)",
+            "CNAME Record (Canonical name record)",
+            "MX Record (Mail Exchanger record)",
+            "TXT Record (Text record)",
+            "NS Record (Name server record)",
+        ],
+        answer:
+            "TXT Record (Text record)",
+        minSelection: 1,
+        maxSelection: 1,
+    },
+    {
+        questionNumber: 17,
+        question: "I give you the location of the authoritative name server. Who am I?",
+        options: [
+            "'A' record (Address record)",
+            "CNAME Record (Canonical name record)",
+            "MX Record (Mail Exchanger record)",
+            "TXT Record (Text record)",
+            "NS Record (Name server record)",
+        ],
+        answer:
+            "NS Record (Name server record)",
+        minSelection: 1,
+        maxSelection: 1,
+    },
+    {
+        questionNumber: 18,
+        question: "You can inspect a domain's text record by opening your terminal and entering...",
+        options: [
+            "host -t ns roadmap.sh",
+            "host -t mx roadmap.sh",
+            "host -t txt roadmap.sh",
+        ],
+        answer:
+            "host -t txt roadmap.sh",
+        minSelection: 1,
+        maxSelection: 1,
+    },
 ]
