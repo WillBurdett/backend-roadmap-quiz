@@ -1,4 +1,5 @@
 import { TOPICS_ARRAY } from "../data/TOPICS_ARRAY";
+import { BROWSERS_AND_HOW_THEY_WORK } from "../data/questions/BROWSERS_AND_HOW_THEY_WORK";
 import { DNS_AND_HOW_IT_WORKS } from "../data/questions/DNS_AND_HOW_IT_WORKS";
 import { HOW_DOES_THE_INTERNET_WORK } from "../data/questions/HOW_DOES_THE_INTERNET_WORK";
 import { WHAT_IS_DOMAIN_NAME } from "../data/questions/WHAT_IS_DOMAIN_NAME";
@@ -24,7 +25,10 @@ export default function Questions({ t }) {
       break;
     case TOPICS_ARRAY[4]:
       content = <Quiz QUESTIONS={DNS_AND_HOW_IT_WORKS}/>;
-      break;     
+      break;
+      case TOPICS_ARRAY[5]:
+        content = <Quiz QUESTIONS={BROWSERS_AND_HOW_THEY_WORK}/>;
+        break;        
     default:
       <h1>default</h1>;
   }
