@@ -66,6 +66,7 @@ export default function Quiz({ QUESTIONS }) {
                 <label className="option-text">
                   <input
                     type="checkbox"
+                    id="checkbox"
                     checked={answers[i] === o}
                     value={o}
                     onChange={handleAnswerChange(i)}
