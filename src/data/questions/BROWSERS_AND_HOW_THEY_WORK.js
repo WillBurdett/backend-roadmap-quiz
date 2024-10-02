@@ -118,4 +118,70 @@ export const BROWSERS_AND_HOW_THEY_WORK = [
         minSelection: 1,
         maxSelection: 1,
     },
+    {
+        questionNumber: 8,
+        question: "True or False - When receiving the HTML, we parse the HTML into a DOM tree (an object representation of the HTML).",
+        options: [
+            "True",
+            "False"
+        ],
+        answer:
+            "True",
+        minSelection: 1,
+        maxSelection: 1,
+    },
+    {
+        questionNumber: 9,
+        question: "True or False - When receiving the CSS from a website, we also parse the CSS into a DOM tree.",
+        options: [
+            "True",
+            "False. Stylesheets are parsed by a CSS parser and create the Style Rules."
+        ],
+        answer:
+            "False. Stylesheets are parsed by a CSS parser and create the Style Rules.",
+        minSelection: 1,
+        maxSelection: 1,
+    },
+    {
+        questionNumber: 10,
+        question: "I create rectangular areas to represent the combined DOM tree and Style Rules (only the visible elements). What am I?",
+        options: [
+            "Layout",
+            "Render Tree",
+            "Painting",
+            "Display"
+        ],
+        answer:
+            "Render Tree",
+        minSelection: 1,
+        maxSelection: 1,
+    },
+    {
+        questionNumber: 11,
+        question: "I position and size all these rectangular blocks. I use a 'dirty bit system'. Every element has a dirty bit that's set to false. If it needs updating it's set to true. What am I?",
+        options: [
+            "Layout",
+            "Render Tree",
+            "Painting",
+            "Display"
+        ],
+        answer:
+            "Layout",
+        minSelection: 1,
+        maxSelection: 1,
+    },
+    {
+        questionNumber: 12,
+        question: "I go through each element and display what you actually want to display. What am I?",
+        options: [
+            "Layout",
+            "Render Tree",
+            "Painting",
+            "Display"
+        ],
+        answer:
+            "Painting",
+        minSelection: 1,
+        maxSelection: 1,
+    },
 ]
